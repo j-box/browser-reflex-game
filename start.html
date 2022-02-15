@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,34 @@
     <title>startGame</title>
     <link rel="stylesheet" href="landingStyles.css">
 </head>
+
 <body>
 
     <div id="startPage">
-        <div class="startText">
-            <h1>click button to start game</h1>
+        <div class="gameName">
+            <h1>Reflex Test</h1>
+        </div>
+        <div class="instruct">
+            <h3>Click the squares as they pop up</h3>
         </div>
 
-       <!-- <button href="game.html" id="startButton" onclick="location.href='game.html';">start game</button> -->
-       <button id="startGame">start game</button>
-       <!-- <button id="startGame">start game</button> -->
+        <div class="gameOptions">
+
+                <label for="numClicks">Enter Number of Clicks:</label>
+                <input type="number" min="3" max="30" value="3" class="numClicks">
+                <button id="startGame">start game</button>
+
+        </div>
+
+
+
     </div>
 
-    
+
 
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
     <script src="start.js"></script>
+    <!-- <script src="game.js"></script> -->
 </body>
+
 </html>
