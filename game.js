@@ -2,10 +2,14 @@ const board = document.querySelector('#gameBoard');
 const piece = document.querySelector('.gamePiece');
 const page = document.querySelector('#startPage');
 const startButt = document.querySelector('#startGame');
-const pieHeight = piece.offsetHeight;
-const pieWidth = piece.offsetWidth;
+const pieceSize = parseInt(window.localStorage.getItem('pixels'));
 const winHeight = window.screen.height;
 const winWidth = window.screen.width;
+
+piece.style.height = pieceSize + 'px';
+piece.style.width = pieceSize + 'px';
+const pieHeight = piece.offsetHeight;
+const pieWidth = piece.offsetWidth;
 
 let seconds = 0;
 let tens = 0;
@@ -39,7 +43,8 @@ piece.addEventListener('click', () => {
       counter = 0;
       clearInterval(interval);
       alert(`clicked ${gameLength} times in ${seconds}.${tens <= 9 ? '0' + tens : tens} seconds`);
-      window.localStorage.setItem('clicks', '3');
+      window.localStorage.setItem('clicks', '1');
+      window.localStorage.setItem('pixels', '57px');
       window.location.replace('start.html');
     }
   }
