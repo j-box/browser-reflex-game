@@ -24,17 +24,18 @@ function startTimer() {
 
 }
 
-// let gameLength = 3;
 let gameLength = parseInt(window.localStorage.getItem('clicks'));
 let counter = 0;
 
 let interval = setInterval(startTimer, 10);
-piece.style.top = Math.abs(((Math.random() * winHeight) - pieHeight)).toString() + 'px';
-piece.style.left = Math.abs(((Math.random() * winWidth) - pieWidth)).toString() + 'px';
+
+
+piece.style.top = Math.abs(((Math.random() * winHeight) - pieHeight)) + 'px';
+piece.style.left = Math.abs(((Math.random() * winWidth) - pieWidth)) + 'px';
 
 piece.addEventListener('click', () => {
-  const vert = Math.abs(((Math.random() * winHeight) - pieHeight)).toString();
-  const hor = Math.abs(((Math.random() * winWidth) - pieWidth)).toString();
+  const vert = Math.abs(((Math.random() * winHeight) - pieHeight));
+  const hor = Math.abs(((Math.random() * winWidth) - pieWidth));
   if (piece.click) {
     piece.style.top = vert + 'px';
     piece.style.left = hor + 'px';

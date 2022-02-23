@@ -6,6 +6,21 @@ const sizeSlide = document.querySelector('.pieceSize');
 let clicksNum = 1;
 let piecePixels = 57;
 
+const winHeight = window.screen.height;
+const winWidth = window.screen.width;
+const prevHeight = piecePrev.offsetHeight;
+const prevWidth = piecePrev.offsetWidth;
+
+piecePrev.style.top = Math.abs(((Math.random() * winHeight) - prevHeight)) + 'px';
+piecePrev.style.left = Math.abs(((Math.random() * winWidth) - prevWidth)) + 'px';
+
+function randomPiece() {
+    piecePrev.style.top = Math.abs(((Math.random() * winHeight) - prevHeight)) + 'px';
+    piecePrev.style.left = Math.abs(((Math.random() * winWidth) - prevWidth)) + 'px';
+}
+
+setInterval(randomPiece, 2000);
+
 clicksButt.addEventListener('change', () => {
     clicksNum = clicksButt.value;
     window.localStorage.setItem('clicks', clicksNum);
@@ -19,12 +34,12 @@ sizeSlide.addEventListener('input', () => {
 })
 
 startButt.addEventListener('click', () => {
-    if( clicksNum < 1){
+    if (clicksNum < 1) {
         alert('enter positive number')
     } else {
         window.location.replace('game.html');
     }
-    
+
 })
 
 
