@@ -13,7 +13,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
+    font-family: monospace;
 }
+
+/* flex container for all instructions */
 
 .gameName, .instruct {
     display: flex;
@@ -23,15 +26,18 @@ body {
     z-index: 2;
 }
 
+
+
 .previewPiece {
     display: flex;
     height: 57px;
     width: 57px;
     position: absolute;
     background-color: red;
-    align-items: center;
     z-index: 1;
 }
+
+/* z index of the text higher than of the preview piece, so preview is below text */
 
 .gameOptions {
     display: flex;
